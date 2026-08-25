@@ -98,8 +98,11 @@ node patcher/index.js --path "C:\Users\你的用户名\AppData\Local\hermes\herm
 | 消息输入框与语音控制 | ✅ |
 | 右键菜单 | ✅ |
 | 会话管理（固定、重命名、删除） | ✅ |
+| Hermes Bot / 智能体与群聊管理 | ✅ |
+| 定时例程与任务（Routines） | ✅ |
 | 通知系统 | ✅ |
 | 通用界面元素（按钮、加载状态等） | ✅ |
+
 
 ## 汉化原理
 

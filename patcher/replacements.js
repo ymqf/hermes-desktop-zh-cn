@@ -270,4 +270,120 @@ module.exports = [
       { find: "Full transcript saved to", replace: "t('install.fullTranscript') + ' '" },
     ]
   },
+
+  // ═══════════════════════════════════════════════════════════════════
+  // lib/chat-runtime.ts — 新建会话默认标题
+  // ═══════════════════════════════════════════════════════════════════
+  {
+    file: 'src/lib/chat-runtime.ts',
+    replacements: [
+      { find: "export const NEW_SESSION_TITLE = 'New session'", replace: "export const NEW_SESSION_TITLE = '新建会话'" },
+    ]
+  },
+
+  // ═══════════════════════════════════════════════════════════════════
+  // app/contrib/controller.tsx — 侧边栏与底部面板 Pane 标题
+  // ═══════════════════════════════════════════════════════════════════
+  {
+    file: 'src/app/contrib/controller.tsx',
+    replacements: [
+      { find: "title: 'sessions',", replace: "title: '会话'," },
+      { find: "title: 'terminal',", replace: "title: '终端'," },
+    ]
+  },
+
+  // ═══════════════════════════════════════════════════════════════════
+  // plugins/hermes-bots/plugin.js — Hermes Bots 插件界面完整汉化
+  // ═══════════════════════════════════════════════════════════════════
+  {
+    file: 'src/plugins/hermes-bots/plugin.js',
+    replacements: [
+      // 对话框标题与描述
+      { find: "jsx(DialogTitle, { children: 'New Bot' })", replace: "jsx(DialogTitle, { children: '新建机器人' })" },
+      { find: "'A named teammate with its own memory, skills, and chat. It can message your other agents.'", replace: "'拥有独立记忆、技能和对话的团队成员，可以与其他智能体互发消息。'" },
+      { find: "'New Bot…'", replace: "'新建机器人…'" },
+      { find: "'New Bot'", replace: "'新建机器人'" },
+      { find: '"New Bot"', replace: '"新建机器人"' },
+      { find: '"Create Bot"', replace: '"创建机器人"' },
+      { find: "'Create Bot'", replace: "'创建机器人'" },
+
+      // 头像选择 Tab 按钮
+      { find: "tabButton('bot', 'Bot')", replace: "tabButton('bot', '默认')" },
+      { find: "tabButton('generate', 'Generate')", replace: "tabButton('generate', 'AI生成')" },
+      { find: "tabButton('upload', 'Upload')", replace: "tabButton('upload', '上传')" },
+      { find: "tabButton('pet', 'Pet')", replace: "tabButton('pet', '宠物')" },
+
+      // 形象设置选项
+      { find: "children: 'Auto'", replace: "children: '自动'" },
+      { find: "'Auto — the name decides'", replace: "'自动 — 根据名称决定'" },
+      { find: "'Randomize'", replace: "'随机形象'" },
+      { find: "'Lock face'", replace: "'锁定形象'" },
+      { find: "'Unlock'", replace: "'解锁形象'" },
+      { find: "'Face follows the name.'", replace: "'形象跟随名称自动生成。'" },
+      { find: "'Classic shapes'", replace: "'经典形状'" },
+
+      // 表单字段标签与占位符
+      { find: "labeled('Name',", replace: "labeled('机器人名称 (Name)'," },
+      { find: "labeled('Title',", replace: "labeled('头衔 (Title)'," },
+      { find: "labeled('Description',", replace: "labeled('角色设定与职责 (Description)'," },
+      { find: "placeholder: 'inbox-triage'", replace: "placeholder: 'inbox-triage (英文唯一标识)'" },
+      { find: "placeholder: 'Inbox Triage'", replace: "placeholder: '收件箱分流 / 助手头衔'" },
+      { find: "placeholder: 'What should this Bot help with?'", replace: "placeholder: '这个机器人主要负责什么工作？'" },
+      { find: "placeholder: 'What should this agent help with?'", replace: "placeholder: '该智能体主要负责什么？'" },
+
+      // 侧边栏与主界面
+      { find: "children: 'Active now'", replace: "children: '当前活跃'" },
+      { find: "'aria-label': 'Active now'", replace: "'aria-label': '当前活跃'" },
+      { find: "title: 'Bots'", replace: "title: '机器人'" },
+      { find: "name: 'Bots'", replace: "name: '机器人'" },
+      { find: "title: 'Cronjobs'", replace: "title: '定时任务'" },
+      { find: "title: 'No bots yet'", replace: "title: '暂无机器人'" },
+      { find: "'Cronjobs are unavailable until this agent appears in the roster.'", replace: "'在此智能体出现在花名册之前，定时任务暂不可用。'" },
+      { find: "'New Group Chat'", replace: "'新建群聊'" },
+      { find: "'Group settings'", replace: "'群组设置'" },
+      { find: "'Manage groups'", replace: "'管理群组'" },
+      { find: "'New Cronjob'", replace: "'新建定时任务'" },
+      { find: "'Cronjob details'", replace: "'定时任务详情'" },
+      { find: "'This chat never resets'", replace: "'此对话永不重置'" },
+      { find: "label: 'Group chats'", replace: "label: '群聊'" },
+
+      // 高级配置与能力选项
+      { find: "['general', 'General']", replace: "['general', '常规']" },
+      { find: "['capabilities', 'Capabilities']", replace: "['capabilities', '能力']" },
+      { find: "'Clone from profile'", replace: "'从已有配置克隆'" },
+      { find: "`Clone from profile (on ${targetLabel})`", replace: "`从配置克隆 (在 ${targetLabel})`" },
+      { find: "'Inherit (launch profile)'", replace: "'继承（启动配置）'" },
+      { find: "'inherited from launch profile'", replace: "'从启动配置继承'" },
+      { find: "'Advanced — model, skills, toolsets, SOUL.md'", replace: "'高级 — 模型、技能、工具集、SOUL.md'" },
+      { find: "'SOUL.md (optional — replaces the generated persona)'", replace: "'SOUL.md（可选 — 替代自动生成的人格设定）'" },
+      { find: "'Leave blank to auto-generate from name/title/description + agent-messaging roster.'", replace: "'留空将根据名称、头衔、描述及智能体通讯录自动生成。'" },
+      { find: "'Share keys & accounts with the main profile'", replace: "'与主配置共享密钥和账户'" },
+      { find: "'Subscriptions, OAuth logins, and API keys stay shared (not copied), so token refreshes never invalidate each other. Uncheck for an isolated snapshot copy.'", replace: "'订阅、OAuth 登录及 API 密钥将保持共享（而非复制），Token 刷新不会互相失效。取消勾选将创建独立的快照副本。'" },
+      { find: "'Capabilities (applies immediately — skills, tools, MCP)'", replace: "'能力（立即生效 — 技能、工具、MCP）'" },
+      { find: "'Advanced configuration failed'", replace: "'高级配置失败'" },
+
+      // 异常与状态处理
+      { find: '"Could not load bot metadata"', replace: '"无法加载机器人元数据"' },
+      { find: '"Could not load bot"', replace: '"无法加载机器人"' },
+      { find: '"Could not load bot groups"', replace: '"无法加载机器人群组"' },
+      { find: '"Could not create the agent."', replace: '"创建智能体失败。"' },
+      { find: '"Update this gateway to use Bot Mode"', replace: '"请升级网关以启用机器人模式"' },
+      { find: '"Update Hermes Desktop to open another Bot chat."', replace: '"请升级 Hermes Desktop 以打开新的机器人对话。"' },
+      { find: '"Group picture generation failed"', replace: '"群头像生成失败"' },
+      { find: '"No free name for the group."', replace: '"群组名称已被占用。"' },
+      { find: '"Agent Inbox"', replace: '"智能体收件箱"' },
+      { find: '"A bot"', replace: '"机器人"' },
+      { find: '"Routines"', replace: '"例程任务"' },
+      { find: '"Schedule"', replace: '"执行计划"' },
+      { find: '"Create Cronjob"', replace: '"创建定时任务"' },
+      { find: '"Create a cronjob for this bot"', replace: '"为此机器人创建定时任务"' },
+      { find: '"Delete cronjob"', replace: '"删除定时任务"' },
+      { find: '"Remove from all groups"', replace: '"从所有群组中移除"' },
+      { find: '"Select a Bot or group first."', replace: '"请先选择一个机器人或群组。"' },
+      { find: '"Bot Chat"', replace: '"机器人对话"' },
+      { find: '"Status unknown"', replace: '"状态未知"' },
+    ]
+  },
 ]
+
+

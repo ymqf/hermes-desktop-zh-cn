@@ -610,6 +610,34 @@ const zhCN: Record<string, string> = {
   // Install - additional keys for patcher
   // ═══════════════════════════════════════════════════
   'install.fullTranscript': '完整日志已保存到',
+
+  // ═══════════════════════════════════════════════════
+  // Hermes Bots & Routines
+  // ═══════════════════════════════════════════════════
+  'bots.newBot': '新建机器人',
+  'bots.createBot': '创建机器人',
+  'bots.whatShouldHelp': '这个机器人主要负责什么工作？',
+  'bots.agentHelp': '该智能体主要负责什么？',
+  'bots.newChat': '与该智能体开启新对话',
+  'bots.hiddenRoster': '从花名册中隐藏',
+  'bots.defaultCannotDelete': '默认配置不能被删除。',
+  'bots.agentInbox': '智能体收件箱',
+  'bots.aBot': '机器人',
+  'bots.routines': '例程任务',
+  'bots.schedule': '执行计划',
+  'bots.createCronjob': '创建定时任务',
+  'bots.createCronjobHint': '为此机器人创建定时任务',
+  'bots.deleteCronjob': '删除定时任务',
+  'bots.manageGroups': '管理群组',
+  'bots.removeFromGroups': '从所有群组中移除',
+  'bots.selectFirst': '请先选择一个机器人或群组。',
+  'bots.botChat': '机器人对话',
+  'bots.statusUnknown': '状态未知',
+  'bots.updateGateway': '请升级网关以启用机器人模式',
+  'bots.updateDesktop': '请升级 Hermes Desktop 以打开新的机器人对话。',
+  'bots.pictureGenFailed': '群头像生成失败',
+  'bots.nameTaken': '群组名称已被占用。',
 }
 
 export default zhCN
+
